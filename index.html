@@ -58,6 +58,18 @@
       font-size: 13px;
       color: #888;
     }
+
+    /* ▼ここからアニメーション */
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1.2s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -66,13 +78,13 @@
   <div class="wrap">
 
     <!-- タイトル -->
-    <div class="section">
+    <div class="section fade">
       <h1>Re:U</h1>
       <div class="lead">Reverse Aging Salon</div>
     </div>
 
-    <!-- 本文（原文そのまま） -->
-    <div class="section">
+    <!-- 本文 -->
+    <div class="section fade">
       <p>
 今は年齢に抗う時代ではなく、
 細胞から整え、若々しさを取り戻す
@@ -92,8 +104,8 @@ Re:Uは
       </p>
     </div>
 
-    <!-- チェック項目 -->
-    <div class="section">
+    <!-- チェック -->
+    <div class="section fade">
       <div class="list">
 ✔ 無理なく続けられるか<br>
 ✔ 細胞から元気になれるか<br>
@@ -107,13 +119,13 @@ Re:Uは
     </div>
 
     <!-- メッセージ -->
-    <div class="section message">
+    <div class="section message fade">
       <p>
 死ぬ前日まで
 
-自分の頭で考え、
-自分の歯で食べ、
-自分の脚で歩き、
+自分の頭で考え
+自分の歯で食べ
+自分の脚で歩き
 笑い、動き、美味しいものを味わい、
 大切な人と過ごすために。
 
@@ -122,11 +134,30 @@ Re:Uは、
       </p>
     </div>
 
-    <div class="footer">
+    <div class="footer fade">
       © Re:U Reverse Aging Salon
     </div>
 
   </div>
+
+  <!-- ▼JS -->
+  <script>
+    const fades = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    fades.forEach(fade => {
+      observer.observe(fade);
+    });
+  </script>
 
 </body>
 </html>
