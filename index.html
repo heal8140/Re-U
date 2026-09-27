@@ -7,11 +7,12 @@
 <title>Re:U｜Reverse Aging Salon</title>
 
 <style>
+
 body {
   margin: 0;
-      font-family: "Noto Serif JP", serif;
-      background: #f5f5f5;
-      color: #222;
+  font-family: "Noto Serif JP", serif;
+  background: #f5f5f5;
+  color: #222;
 }
 
 /* ヘッダー */
@@ -26,6 +27,7 @@ header h1 {
   font-size: 24px;
 }
 
+
 /* ファーストビュー */
 .hero {
   height: 45vh;
@@ -37,11 +39,6 @@ header h1 {
   text-align: center;
 }
 
-.about {
-  padding: 40px 20px;
-  text-align: center;
-}
-  
 .hero h2 {
   font-size: 36px;
   margin-bottom: 20px;
@@ -51,9 +48,10 @@ header h1 {
   font-size: 16px;
 }
 
+
 /* コンセプト */
 .about {
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -67,6 +65,7 @@ header h1 {
   margin: 0 auto;
   line-height: 1.8;
 }
+
 
 /* 特徴 */
 .features {
@@ -94,6 +93,7 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 /* メニュー */
 .menu {
   padding: 80px 20px;
@@ -117,6 +117,7 @@ header h1 {
   border-radius: 10px;
 }
 
+
 /* CTA */
 .cta {
   padding: 80px 20px;
@@ -135,6 +136,7 @@ header h1 {
   border-radius: 5px;
 }
 
+
 /* フッター */
 footer {
   padding: 20px;
@@ -143,81 +145,171 @@ footer {
   border-top: 1px solid #eee;
 }
 
+
+/* =========================
+   ふわっと表示
+========================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* スマホ対応 */
 @media (max-width: 768px) {
+
   .feature-list,
   .menu-list {
     flex-direction: column;
     align-items: center;
   }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
 }
+
+
+/* =========================
+   スクロール時のふわっと表示
+========================= */
+
 </style>
 </head>
 
 <body>
 
+
 <header>
-  <h1>水素サロンheal</h1>
+  <h1>水素サロン Re:U</h1>
 </header>
+
 
 <section class="hero">
   <h2>身体を根本から整える</h2>
   <p>細胞レベルから整える、新しい健康習慣</p>
 </section>
 
-<section class="about">
+
+<section class="about fade-up">
   <h2>CONCEPT</h2>
+
   <p>
     一時的な効果ではなく、身体の土台から整える。<br>
     無理なく続けられ、細胞レベルで変化を感じられるケアを提供します。
   </p>
 </section>
 
-<section class="features">
+
+<section class="features fade-up">
+
   <h2>特徴</h2>
+
   <div class="feature-list">
-    <div class="feature-item">
+
+    <div class="feature-item fade-up">
       <h3>継続しやすい</h3>
       <p>無理なく続けられる設計</p>
     </div>
-    <div class="feature-item">
+
+    <div class="feature-item fade-up">
       <h3>細胞レベル</h3>
       <p>内側から整えるアプローチ</p>
     </div>
-    <div class="feature-item">
+
+    <div class="feature-item fade-up">
       <h3>根本改善</h3>
       <p>身体の土台から変える</p>
     </div>
+
   </div>
+
 </section>
 
-<section class="menu">
+
+<section class="menu fade-up">
+
   <h2>MENU</h2>
+
   <div class="menu-list">
-    <div class="menu-item">
+
+    <div class="menu-item fade-up">
       <h3>ネオヒーラー</h3>
       <p>¥6,000〜</p>
     </div>
-    <div class="menu-item">
+
+    <div class="menu-item fade-up">
       <h3>ピラティス</h3>
       <p>¥5,500〜</p>
     </div>
-    <div class="menu-item">
+
+    <div class="menu-item fade-up">
       <h3>よもぎ蒸し</h3>
       <p>¥4,000〜</p>
     </div>
+
   </div>
+
 </section>
 
-<section class="cta">
+
+<section class="cta fade-up">
+
   <h2>ご予約はこちら</h2>
+
   <p>公式LINEから簡単にご予約いただけます</p>
+
   <a href="#">予約する</a>
+
 </section>
+
 
 <footer>
   <p>© Re:U Reverse Aging Salon</p>
 </footer>
+
+
+<script>
+
+/* =========================
+   ふわっと表示
+========================= */
+
+const fadeElements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('show');
+
+    }
+
+  });
+
+}, {
+  threshold: 0.15
+});
+
+
+fadeElements.forEach(element => {
+  observer.observe(element);
+});
+
+</script>
+
 
 </body>
 </html>
