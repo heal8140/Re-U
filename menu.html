@@ -3,37 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Re:Uの施術メニューをご案内します。">
   <title>MENU｜Re:U</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Noto Serif JP",serif; background:#f8f8f6; color:#252525; line-height:1.8; }
+    header { border-bottom:1px solid #e5e5df; background:#fff; }
+    .header-inner { max-width:1040px; margin:auto; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { text-decoration:none; font-size:22px; letter-spacing:.08em; color:#252525; }
+    .back { text-decoration:none; font-size:13px; color:#555; }
+    main { max-width:1040px; margin:auto; padding:86px 24px 110px; }
+    .title { text-align:center; margin-bottom:58px; }
+    .title p { margin:0 0 8px; font-size:12px; letter-spacing:.2em; color:#888; }
+    .title h1 { margin:0; font-weight:500; font-size:34px; letter-spacing:.12em; }
+    .lead { text-align:center; max-width:680px; margin:0 auto 50px; color:#666; }
+    .selector { display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
+    .choice { background:#fff; border:1px solid #deded8; padding:48px 34px; text-align:center; }
+    .choice small { letter-spacing:.14em; color:#8a8a84; }
+    .choice h2 { margin:10px 0 14px; font-size:26px; font-weight:500; }
+    .choice p { margin:0 0 28px; color:#666; font-size:14px; }
+    .button { display:inline-block; min-width:200px; padding:13px 24px; border:1px solid #333; text-decoration:none; color:#252525; transition:.25s; }
+    .button:hover { background:#333; color:#fff; }
+    footer { padding:28px; text-align:center; border-top:1px solid #e5e5df; font-size:12px; }
+    @media(max-width:700px){ main{padding:65px 18px 80px}.selector{grid-template-columns:1fr}.choice{padding:38px 24px}.title h1{font-size:30px} }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Re:U トップページ"><span class="brand-name">Re:U</span><span class="brand-sub">水素サロン・ネオヒーラー</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
-      <nav class="nav" id="site-nav" aria-label="メインメニュー">
-        <a href="index.html">HOME</a>
-        <a href="index.html#concept">CONCEPT</a>
-        <a href="index.html#features">FEATURES</a>
-        <a href="menu.html" aria-current="page">MENU</a>
-        <a href="index.html#reserve">RESERVATION</a>
-      </nav>
-    </div>
-  </header>
-  <main class="menu-page">
-    <div class="page-heading"><span class="eyebrow">TREATMENTS</span><h1>MENU</h1><p>施術メニュー</p></div>
-    <section class="section"><div class="container">
-      <div class="menu-grid">
-        <article class="menu-card fade-up"><h3>レプトンガス（水素）</h3><p>水素吸入のメニュー</p><div class="price">¥4,000〜</div></article>
-        <article class="menu-card fade-up"><h3>ネオヒーラー</h3><p>身体の深部にアプローチし、細胞レベルで整える施術</p><div class="price">¥6,000〜</div></article>
-        <article class="menu-card fade-up"><h3>ピラティスコンディショニング</h3><p>身体の歪みを整え、正しい姿勢と動きを取り戻す</p><div class="price">¥5,500〜</div></article>
-        <article class="menu-card fade-up"><h3>よもぎ蒸し</h3><p>内側から温め、巡りを整えるデトックスケア</p><div class="price">¥4,000〜</div></article>
-      </div>
-      <div class="center"><a class="outline-link" href="index.html">← TOPへ戻る</a></div>
-    </div></section>
-  </main>
-  <footer class="site-footer">© Re:U Reverse Aging Salon</footer>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html">Re:U</a>
+    <a class="back" href="index.html">← TOPへ戻る</a>
+  </div>
+</header>
+<main>
+  <div class="title">
+    <p>TREATMENT MENU</p>
+    <h1>MENU</h1>
+  </div>
+  <p class="lead">ご利用状況に合わせて、下記からメニューをお選びください。</p>
+  <div class="selector">
+    <article class="choice">
+      <small>FIRST VISIT</small>
+      <h2>新規のお客様</h2>
+      <p>初めてRe:Uをご利用になるお客様向けのメニューです。</p>
+      <a class="button" href="menu-new.html">新規メニューを見る</a>
+    </article>
+    <article class="choice">
+      <small>REGULAR</small>
+      <h2>既存のお客様</h2>
+      <p>ご来店経験のあるお客様向けの通常メニューです。</p>
+      <a class="button" href="menu-regular.html">通常メニューを見る</a>
+    </article>
+  </div>
+</main>
+<footer>© Re:U Reverse Aging Salon</footer>
 </body>
 </html>
