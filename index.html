@@ -61,22 +61,61 @@
     }
     nav a:hover::after { transform: scaleX(1); }
 
-    .hero {
-      min-height: 70vh;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 90px 24px;
-      background:
-        linear-gradient(rgba(248,248,246,.55), rgba(248,248,246,.72)),
-        url("pilates.png") center/cover no-repeat;
-    }
-    .hero-inner {
-      max-width: 760px;
-      padding: 48px 28px;
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(255,255,255,.7);
-    }
+    
+/* トップページ：左に文字、右に写真 */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 570px;
+  padding: 0;
+  background: #f8f8f6;
+  text-align: left;
+  align-items: stretch;
+}
+
+/* 左側の文字 */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 7vw;
+  max-width: none;
+  background: transparent;
+  border: none;
+}
+
+/* 右側の写真 */
+.hero-photo {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inner {
+    padding: 65px 25px;
+  }
+
+  .hero-photo {
+    min-height: 300px;
+    height: 350px;
+  }
+}
+
     .eyebrow {
       margin: 0 0 12px;
       font-size: 12px;
@@ -186,7 +225,7 @@
       .header-inner { flex-direction: column; gap: 10px; padding: 13px 16px; }
       nav { gap: 15px; justify-content: center; }
       nav a { font-size: 11px; }
-      .hero { min-height: 62vh; padding: 70px 18px; }
+      .hero { min-height: auto; padding: 0; }
       section { padding: 76px 18px; }
       .feature-list, .menu-list { grid-template-columns: 1fr; }
       .feature-item, .menu-item { max-width: 520px; width: 100%; margin: 0 auto; }
@@ -209,23 +248,23 @@
 </header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="hero-inner fade-up">
-      <p class="eyebrow">Reverse Aging Salon</p>
-      <h1>身体を根本から整える</h1>
-      <p>細胞レベルから整える、新しい健康習慣</p>
-    </div>
-  </section>
+  
+<section class="hero" id="home">
 
-  <section class="concept fade-up" id="concept">
-    <div class="section-inner">
-      <h2 class="section-title">CONCEPT<span>コンセプト</span></h2>
-      <p>
-        一時的な効果ではなく、身体の土台から整える。<br>
-        無理なく続けられ、細胞レベルで変化を感じられるケアを提供します。
-      </p>
-    </div>
-  </section>
+  <div class="hero-inner fade-up">
+    <p class="eyebrow">Reverse Aging Salon</p>
+
+    <h1>身体を根本から整える</h1>
+
+    <p>細胞レベルから整える、新しい健康習慣</p>
+  </div>
+
+  <div class="hero-photo">
+    <img src="pilates.png" alt="ピラティスのイメージ">
+  </div>
+
+</section>
+
 
   <section class="features fade-up" id="features">
     <div class="section-inner">
