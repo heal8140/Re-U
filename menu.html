@@ -2,64 +2,38 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Re:Uの施術メニューをご案内します。">
   <title>MENU｜Re:U</title>
-
-  <style>
-    body {
-      font-family: "Noto Serif JP", serif;
-      text-align: center;
-      padding: 80px 20px;
-      background: #f5f5f5;
-      color: #222;
-    }
-
-    h1 {
-      margin-bottom: 40px;
-    }
-
-    .menu {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: left;
-      line-height: 2;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      color: #222;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-
-  <h1>MENU</h1>
-
-  <div class="menu-wrap">
-
-  <div class="menu-card">
-    <h2>ネオヒーラー</h2>
-    <p>身体の深部にアプローチし、細胞レベルで整える施術</p>
-    <div class="price">¥6,000〜</div>
-  </div>
-
-  <div class="menu-card">
-    <h2>ピラティスコンディショニング</h2>
-    <p>身体の歪みを整え、正しい姿勢と動きを取り戻す</p>
-    <div class="price">¥5,500〜</div>
-  </div>
-
-  <div class="menu-card">
-    <h2>よもぎ蒸し</h2>
-    <p>内側から温め、巡りを整えるデトックスケア</p>
-    <div class="price">¥4,000〜</div>
-  </div>
-
-</div>
-
-  <a href="index.html">← TOPへ戻る</a>
-
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Re:U トップページ"><span class="brand-name">Re:U</span><span class="brand-sub">水素サロン・ネオヒーラー</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="nav" id="site-nav" aria-label="メインメニュー">
+        <a href="index.html">HOME</a>
+        <a href="index.html#concept">CONCEPT</a>
+        <a href="index.html#features">FEATURES</a>
+        <a href="menu.html" aria-current="page">MENU</a>
+        <a href="index.html#reserve">RESERVATION</a>
+      </nav>
+    </div>
+  </header>
+  <main class="menu-page">
+    <div class="page-heading"><span class="eyebrow">TREATMENTS</span><h1>MENU</h1><p>施術メニュー</p></div>
+    <section class="section"><div class="container">
+      <div class="menu-grid">
+        <article class="menu-card fade-up"><h3>レプトンガス（水素）</h3><p>水素吸入のメニュー</p><div class="price">¥4,000〜</div></article>
+        <article class="menu-card fade-up"><h3>ネオヒーラー</h3><p>身体の深部にアプローチし、細胞レベルで整える施術</p><div class="price">¥6,000〜</div></article>
+        <article class="menu-card fade-up"><h3>ピラティスコンディショニング</h3><p>身体の歪みを整え、正しい姿勢と動きを取り戻す</p><div class="price">¥5,500〜</div></article>
+        <article class="menu-card fade-up"><h3>よもぎ蒸し</h3><p>内側から温め、巡りを整えるデトックスケア</p><div class="price">¥4,000〜</div></article>
+      </div>
+      <div class="center"><a class="outline-link" href="index.html">← TOPへ戻る</a></div>
+    </div></section>
+  </main>
+  <footer class="site-footer">© Re:U Reverse Aging Salon</footer>
 </body>
 </html>
