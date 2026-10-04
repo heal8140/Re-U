@@ -21,6 +21,17 @@
     .lead { text-align: center; font-size: 15px; color: #666; margin: 0 0 70px; }
     .post-area { min-height: 220px; background: #fff; border: 1px solid #e7e7e2; display: flex; justify-content: center; align-items: center; text-align: center; padding: 35px 22px; }
     .post-area p { margin: 0; font-size: 15px; color: #777; }
+    .post-area { display: block; min-height: 220px; padding: 30px; text-align: left; }
+    .post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .post-card { display: block; text-decoration: none; border: 1px solid #e7e7e2; background: #fff; overflow: hidden; }
+    .post-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .post-content { padding: 23px; }
+    .post-date { font-size: 12px; color: #9b8565; margin: 0 0 10px; }
+    .post-title { font-size: 18px; margin: 0 0 12px; line-height: 1.6; font-weight: 500; }
+    .post-excerpt { font-size: 13px; color: #666; margin: 0; }
+    .post-card:hover { box-shadow: 0 7px 30px #0000000d; }
+    @media (max-width: 850px) { .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .post-grid { grid-template-columns: 1fr; } .post-area { padding: 18px; } }
     footer { padding: 26px 20px; border-top: 1px solid #e7e7e2; text-align: center; font-size: 12px; color: #777; }
     @media (max-width: 600px) { main { padding: 70px 20px 100px; } .lead { margin-bottom: 48px; } }
   </style>
@@ -37,9 +48,11 @@
     <h1>BLOG</h1>
     <p class="lead">Re:Uからのお知らせや、美容と健康に関する情報をお届けします。</p>
     <div class="post-area" aria-label="ブログ記事一覧">
-      <p>記事はただいま準備中です。</p>
+      <p id="blog-message" role="status">記事を読み込んでいます…</p>
+      <div class="post-grid" id="blog-list"></div>
     </div>
   </main>
   <footer>© Re:U Reverse Aging Salon</footer>
+  <script src="blog-feed.js" defer></script>
 </body>
 </html>
